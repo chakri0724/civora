@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #2a2a26;
+  color: #14150f;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* pulsing status dot */
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.25;
+  }
+}
+.ring-pulse {
+  animation: pulse 1.4s infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .ring-pulse {
+    animation: none;
+  }
+}
+
+/* hide scrollbars on horizontal photo strips */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
